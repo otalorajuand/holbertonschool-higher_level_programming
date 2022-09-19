@@ -12,9 +12,9 @@ if number < 0:
 else:
     last_digit = number % 10
 
-if abs(last_digit) > 5:
+if last_digit > 5:
     print(str1 + f" {number} is {last_digit} " + str2)
 elif last_digit == 0:
     print(str1 + f" {number} is {last_digit} " + str3)
-elif abs(last_digit) < 6 and abs(last_digit) != 0:
+elif last_digit < 6 and last_digit != 0:
     print(str1 + f" {number} is {last_digit} " + str4)
