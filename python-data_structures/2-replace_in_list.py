@@ -9,9 +9,7 @@ def replace_in_list(my_list, idx, element):
         Return: The new list.
     """
 
-    if idx < 0 or idx >= len(my_list):
-        return None
-
-    my_list[idx] = element
+    if not (idx < 0 or idx >= len(my_list)):
+        my_list[idx] = element
 
     return my_list
