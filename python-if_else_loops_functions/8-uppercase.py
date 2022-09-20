@@ -12,4 +12,3 @@ def uppercase(str):
             print("{}".format(chr(a - 32)), end="")
         else: 
             print("{}".format(letter), end="")
-    print("")
