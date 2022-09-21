@@ -9,6 +9,6 @@ def divisible_by_2(my_list=[]):
         if elem % 2 == 0:
             list_result.append(True)
         else:
-             list_result.append(False)
+            list_result.append(False)
 
     return list_result
