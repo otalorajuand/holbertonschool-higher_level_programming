@@ -14,6 +14,6 @@ def print_matrix_integer(matrix=[[]]):
         for col in range(len(row)):
             print("{:d}".format(row[col]))
             if col < len(row) - 1:
-                print("{}".format(" "))
+                print("{}".format(" "), end="")
             else:
                 print("{}".format(""))
