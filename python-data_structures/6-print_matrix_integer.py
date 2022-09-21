@@ -12,5 +12,5 @@ def print_matrix_integer(matrix=[[]]):
 
     for row in matrix:
         for col in range(len(row) - 1):
-            print(row[col], end=" ")
-        print(row[col + 1])
+            print("{}".format(row[col]), end=" ")
+        print("{}".format(row[col + 1]))
