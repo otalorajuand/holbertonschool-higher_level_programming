@@ -11,4 +11,4 @@ def uppercase(str):
         if (a >= 97 and a <= 122):
             letter = chr(a - 32)
         print("{}".format(letter), end="")
-    print("")
+    print("{}".format(""))
