@@ -1,15 +1,16 @@
 #!/usr/bin/python3
 from calculator_1 import add, sub, mul, div
-import sys
+from sys import argv
 
 if __name__ == "__main__":
-    if len(sys.argv) != 4:
+
+    if len(argv) != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
 
-    num_1 = sys.argv[1]
-    num_2 = sys.argv[3]
-    operator = sys.argv[2]
+    num_1 = int(argv[1])
+    num_2 = int(argv[3])
+    operator = argv[2]
 
     match operator:
         case '+':
