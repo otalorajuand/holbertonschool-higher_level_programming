@@ -13,13 +13,14 @@ if __name__ == "__main__":
     operator = argv[2]
 
     if operator == "+":
-            print('{} + {} = {}'.format(num_1, num_2, add(num_1, num_2)))
+        print('{} + {} = {}'.format(num_1, num_2, add(num_1, num_2)))
     elif operator == "-":
-            print('{} - {} = {}'.format(num_1, num_2, sub(num_1, num_2)))
+        print('{} - {} = {}'.format(num_1, num_2, sub(num_1, num_2)))
     elif operator == "*":
-            print('{} * {} = {}'.format(num_1, num_2, mul(num_1, num_2)))
+        print('{} * {} = {}'.format(num_1, num_2, mul(num_1, num_2)))
     elif operator == "/":
-            print('{} / {} = {}'.format(num_1, num_2, div(num_1, num_2)))
+        print('{} / {} = {}'.format(num_1, num_2, div(num_1, num_2)))
     else:
-            print('Unknown operator. Available operators: +, -, * and /')
+        print('Unknown operator. Available operators: +, -, * and /')
+        exit(1)
 
