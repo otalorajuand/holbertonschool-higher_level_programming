@@ -12,15 +12,14 @@ if __name__ == "__main__":
     num_2 = int(argv[3])
     operator = argv[2]
 
-    match operator:
-        case '+':
+    if operator == "+":
             print('{} + {} = {}'.format(num_1, num_2, add(num_1, num_2)))
-        case '-':
+    elif operator == "-":
             print('{} - {} = {}'.format(num_1, num_2, sub(num_1, num_2)))
-        case '*':
+    elif operator == "*":
             print('{} * {} = {}'.format(num_1, num_2, mul(num_1, num_2)))
-        case '/':
+    elif operator == "/":
             print('{} / {} = {}'.format(num_1, num_2, div(num_1, num_2)))
-        case other:
+    else:
             print('Unknown operator. Available operators: +, -, * and /')
 
