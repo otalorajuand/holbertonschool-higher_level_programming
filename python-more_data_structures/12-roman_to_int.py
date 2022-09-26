@@ -4,7 +4,7 @@
 def roman_to_int(roman_string):
 
     """converts a Roman numeral to an integer."""
-    if not roman_string:
+    if not roman_string or not isinstance(roman_string, str):
         return 0
 
     number = 0
@@ -19,6 +19,6 @@ def roman_to_int(roman_string):
         if last_entry < digit:
             number -= 2 * last_entry
 
-        last_entry = number
+        last_entry = digit
 
     return (number)
