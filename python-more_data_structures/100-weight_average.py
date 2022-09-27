@@ -9,6 +9,6 @@ def weight_average(my_list=[]):
     if not my_list:
         return (0)
 
-    numerator = sum([elem[0] * elem[1] for elem in my_list]) 
+    numerator = sum([elem[0] * elem[1] for elem in my_list])
     denominator = sum([elem[1] for elem in my_list])
     return (numerator / denominator)
