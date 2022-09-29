@@ -8,7 +8,8 @@ class Node:
         Attributes:
         data (int): The value of the node
         next_node (Node): The Node object the self object it poiting to
-    """    
+    """
+
     def __init__(self, data, next_node=None):
         """Initializes node object"""
         self.data = data
@@ -50,6 +51,7 @@ class SinglyLinkedList:
         Attributes:
         head (Node): The first Node of the list.
     """
+
     def __init__(self):
         """Initializes a SinglyLinkedList object.
         """
@@ -62,7 +64,7 @@ class SinglyLinkedList:
         while current_node:
             result_string += f'{current_node.data}\n'
             current_node = current_node.next_node
-        return (result_string)
+        return (result_string[:-1])
 
     def sorted_insert(self, value):
         """Inserts a new Node into the correct sorted position
@@ -87,8 +89,8 @@ class SinglyLinkedList:
             if not current_node.next_node:
                 current_node.next_node = new_node
                 break
-            if current_node.data < value and
-            current_node.next_node.data >= value:
+            if (current_node.data < value and
+                    current_node.next_node.data >= value):
                 current_node.next_node = Node(value, current_node.next_node)
                 break
             current_node = current_node.next_node
