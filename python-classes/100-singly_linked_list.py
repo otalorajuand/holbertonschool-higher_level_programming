@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Node class"""
 
 
 class Node:
@@ -27,11 +28,15 @@ class Node:
 
     @next_node.setter
     def next_node(self, value):
-         """data setter"""
-         if not isinstance(value, Node) and value:
-             raise TypeError("next_node must be a Node object")
-         else:
-             self.__next_node = value
+        """data setter"""
+        if not isinstance(value, Node) and value:
+            raise TypeError("next_node must be a Node object")
+        else:
+            self.__next_node = value
+
+
+"""SinglyLinkedList class"""
+
 
 class SinglyLinkedList:
 
@@ -53,7 +58,7 @@ class SinglyLinkedList:
         if not current_node:
             self.__head = Node(value)
             return
-    
+
         if current_node.data > value:
             new_node.next_node = current_node
             self.__head = new_node
@@ -63,7 +68,8 @@ class SinglyLinkedList:
             if not current_node.next_node:
                 current_node.next_node = new_node
                 break
-            if current_node.data < value and current_node.next_node.data >= value:
+            if current_node.data < value and
+            current_node.next_node.data >= value:
                 current_node.next_node = Node(value, current_node.next_node)
                 break
             current_node = current_node.next_node
