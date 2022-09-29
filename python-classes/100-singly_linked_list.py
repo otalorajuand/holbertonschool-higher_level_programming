@@ -80,7 +80,7 @@ class SinglyLinkedList:
             self.__head = Node(value)
             return
 
-        if current_node.data > value:
+        if current_node.data >= value:
             new_node.next_node = current_node
             self.__head = new_node
             return
