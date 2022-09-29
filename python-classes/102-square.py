@@ -1,9 +1,7 @@
 #!/usr/bin/python3
-from functools import total_ordering
 """square class"""
 
 
-@total_ordering
 class Square:
     """defines a square
 
@@ -39,8 +37,32 @@ class Square:
             return (True)
         return (False)
 
+    def __neq__(self, other):
+        """not equal method"""
+        if self.size != other.size:
+            return (True)
+        return (False)
+
     def __lt__(self, other):
         """lower than method"""
         if self.size < other.size:
+            return (True)
+        return (False)
+
+    def __le__(self, other):
+        """lower or equal than method"""
+        if self.size <= other.size:
+            return (True)
+        return (False)
+
+    def __gt__(self, other):
+        """greater than method"""
+        if self.size > other.size:
+            return (True)
+        return (False)
+
+    def __ge__(self, other):
+        """greater or equal than method"""
+        if self.size >= other.size:
             return (True)
         return (False)
