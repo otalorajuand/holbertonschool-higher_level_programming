@@ -3,15 +3,14 @@
 
 
 class Node:
-    """Defines a Node object"""
-    
-    def __init__(self, data, next_node=None):
-        """Initializes node object
+    """Defines a Node object
 
-            Attributes:
-            data (int): The value of the node
-            next_node (Node): The Node object the self object it poiting to
-        """
+        Attributes:
+        data (int): The value of the node
+        next_node (Node): The Node object the self object it poiting to
+    """    
+    def __init__(self, data, next_node=None):
+        """Initializes node object"""
         self.data = data
         self.next_node = next_node
 
@@ -46,13 +45,13 @@ class Node:
 
 
 class SinglyLinkedList:
-    """Defines a SinglyLinkedList object"""
+    """Defines a SinglyLinkedList object
 
+        Attributes:
+        head (Node): The first Node of the list.
+    """
     def __init__(self):
         """Initializes a SinglyLinkedList object.
-
-            Attributes:
-            head (Node): The first Node of the list.
         """
         self.__head = None
 
