@@ -5,6 +5,12 @@
 class Node:
 
     def __init__(self, data, next_node=None):
+        """Initializes node object
+
+            Attributes:
+                data: The value of the node
+                next_node: The Node object the self object it poiting to
+        """
         self.data = data
         self.next_node = next_node
 
@@ -41,9 +47,15 @@ class Node:
 class SinglyLinkedList:
 
     def __init__(self):
+        """Initializes a SinglyLinkedList object.
+
+            Attributes:
+                head: The first Node of the list.
+        """
         self.__head = None
 
     def __str__(self):
+        """printing method"""
         current_node = self.__head
         result_string = ""
         while current_node:
@@ -52,6 +64,12 @@ class SinglyLinkedList:
         return (result_string)
 
     def sorted_insert(self, value):
+        """Inserts a new Node into the correct sorted position
+            in the list (increasing order).
+
+            Attributes:
+            value: The Node to be inserted.
+        """
         current_node = self.__head
         new_node = Node(value)
 
