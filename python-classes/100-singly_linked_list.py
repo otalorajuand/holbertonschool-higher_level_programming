@@ -3,8 +3,8 @@
 
 
 class Node:
-
-    """Node class"""
+    """Defines a Node object"""
+    
     def __init__(self, data, next_node=None):
         """Initializes node object
 
@@ -46,8 +46,8 @@ class Node:
 
 
 class SinglyLinkedList:
+    """Defines a SinglyLinkedList object"""
 
-    """SinglyLinkedList class"""
     def __init__(self):
         """Initializes a SinglyLinkedList object.
 
