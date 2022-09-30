@@ -2,7 +2,7 @@
 """Magic Class"""
 
 
-class Magic:
+class MagicClass:
     """Defines a magic class
 
         Attributes:
@@ -11,7 +11,7 @@ class Magic:
 
     def __init__(self, radius=0):
         """Initializes the object"""
-        if type(self.radius) is not int or type(self.radius) is not float:
+        if type(self.radius) is not int and type(self.radius) is not float:
             raise TypeError('radius must be a number')
         else:
             self.radius = radius
