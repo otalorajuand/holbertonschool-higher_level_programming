@@ -6,8 +6,9 @@ class Magic:
     """Defines a magic class
 
         Attributes:
-        radius: The radius of the circle
+        radius (int): The radius of the circle
     """
+
     def __init__(self, radius=0):
         """Initializes the object"""
         if type(self.radius) is not int or type(self.radius) is not float:
