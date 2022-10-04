@@ -5,6 +5,7 @@ print(add_integer(1, 2))
 print(add_integer(100, -2))
 print(add_integer(2))
 print(add_integer(100.3, -2))
+print(add_integer(1.3407807929942597e+154*1.3407807929942597e+154, 2000000000000))
 try:
     print(add_integer(4, "School"))
 except Exception as e:

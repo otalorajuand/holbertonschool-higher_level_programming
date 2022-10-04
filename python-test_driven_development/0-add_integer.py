@@ -5,6 +5,7 @@ The example module supplies one function, add_integer().  For example,
 >>> add_integer(5, 10)
 15"""
 
+
 def add_integer(a, b=98):
     """Return the sum of a and b.
     a and b must be integers of floats.
