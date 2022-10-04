@@ -8,6 +8,7 @@ The example module supplies one function, matrix_divided().  For example,
 >>> matrix_divided(matrix, 3)
 [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]"""
 
+
 def matrix_divided(matrix, div):
     """divides all elements of a matrix.
     all elements must be integers of floats.
@@ -18,7 +19,7 @@ def matrix_divided(matrix, div):
 
     for col in matrix:
         if len(col) != col_len:
-                raise TypeError(err_2)
+            raise TypeError(err_2)
         for row in col:
             if type(row) not in [int, float]:
                 raise TypeError(err_1)
@@ -29,4 +30,4 @@ def matrix_divided(matrix, div):
         raise ZeroDivisionError('division by zero')
 
     return (list(map(lambda x: list(map(lambda y: round(y / div, 2), x)),
-        matrix)))
+            matrix)))
