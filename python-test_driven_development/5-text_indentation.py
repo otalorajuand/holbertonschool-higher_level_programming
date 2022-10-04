@@ -23,7 +23,7 @@ def text_indentation(text=""):
     string = ""
     i = 0
     while i < len(text):
-        
+
         string += text[i]
         if text[i] in ['.', '?', ':']:
             print(string.strip())
