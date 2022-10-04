@@ -7,7 +7,7 @@ The example module supplies one function, print_square().  For example,
 ###"""
 
 
-def print_square(size):
+def print_square(size=1):
     """prints a square with the character #.
     The size of the character must be an integer
     and greater than 0"""
