@@ -9,7 +9,7 @@ The example module supplies one function, matrix_divided().  For example,
 [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]"""
 
 
-def matrix_divided(matrix=[[1]], div=1):
+def matrix_divided(matrix, div):
     """divides all elements of a matrix.
     all elements must be integers of floats.
     Div have to be a number different from 0"""
