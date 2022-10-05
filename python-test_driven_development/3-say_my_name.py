@@ -6,7 +6,7 @@ The example module supplies one function, say_my_name().  For example,
 My name is John Smith"""
 
 
-def say_my_name(first_name="", last_name=""):
+def say_my_name(first_name, last_name=""):
     """prints My name is <first name> <last name>
     First and Last names must be strings."""
 
