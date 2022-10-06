@@ -16,10 +16,10 @@ def lazy_matrix_mul(m_a, m_b):
     Returns: The resulting matrix."""
 
     if type(m_a) is not list:
-        raise TypeError('m_a must be a list')
+        raise TypeError("Scalar operands are not allowed, use '*' instead")
 
     if type(m_b) is not list:
-        raise TypeError('m_b must be a list')
+        raise TypeError("Scalar operands are not allowed, use '*' instead")
 
     if m_a == [] or m_a == [[]]:
         raise ValueError(r"m_a can't be empty")
@@ -31,19 +31,19 @@ def lazy_matrix_mul(m_a, m_b):
         if type(row) is not list:
             raise TypeError('m_a must be a list of lists')
         if len(row) != len(m_a[0]):
-            raise TypeError('each row of m_a must be of the same size')
+            raise TypeError('setting an array element with a sequence.')
         for elem in row:
             if type(elem) not in [int, float]:
-                raise TypeError('m_a should contain only integers or floats')
+                raise TypeError('invalid data type for einsum')
 
     for row in m_b:
         if type(row) is not list:
             raise TypeError('m_b must be a list of lists')
         if len(row) != len(m_b[0]):
-            raise TypeError('each row of m_b must be of the same size')
+            raise TypeError('setting an array element with a sequence.')
         for elem in row:
             if type(elem) not in [int, float]:
-                raise TypeError('m_b should contain only integers or floats')
+                raise TypeError('invalid data type for einsum')
 
     if len(m_a[0]) != len(m_b):
         raise ValueError(r"m_a and m_b can't be multiplied")
