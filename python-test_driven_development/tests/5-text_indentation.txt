@@ -11,6 +11,9 @@ This is an example text file in reStructuredText format.  First import
 
 Now use it:
 
+Regular case
+============
+
 	>>> text_indentation("Hello world. Who's there? Just me: Juan")
 	Hello world.
 	<BLANKLINE>
@@ -20,9 +23,15 @@ Now use it:
 	<BLANKLINE>
 	Juan
 
+Not a string argument
+=====================
+
 	>>> text_indentation(10)
 	Traceback (most recent call last):
     	TypeError: text must be a string
+
+Missing argument
+================
 
 	>>> text_indentation()
 	Traceback (most recent call last):

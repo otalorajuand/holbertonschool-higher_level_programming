@@ -11,8 +11,14 @@ This is an example text file in reStructuredText format.  First import
 
 Now use it:
 
+Regular case
+============
+
 	>>> say_my_name("John", "Smith")
 	My name is John Smith
+
+Not a string argument
+=====================
 
 	>>> say_my_name("John", 3)
 	Traceback (most recent call last):
@@ -22,8 +28,14 @@ Now use it:
 	Traceback (most recent call last):
     	TypeError: first_name must be a string
 
+Missing one argument
+====================
+
 	>>> say_my_name("Juan")
 	My name is Juan 
+
+Missing both arguments
+======================
 
 	>>> say_my_name()
 	Traceback (most recent call last):

@@ -11,9 +11,15 @@ This is an example text file in reStructuredText format.  First import
 
 Now use it:
 
+Regular case
+============
+
 	>>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
 	array([[ 7, 10],
                [15, 22]])
+
+Not a list argument
+===================
 
 	>>> matrix_mul("a", [[1, 2, 3],[4, 5, 6]])
 	Traceback (most recent call last):
@@ -23,13 +29,26 @@ Now use it:
 	Traceback (most recent call last):
     	TypeError: Scalar operands are not allowed, use '*' instead
 
+Empty list argument
+===================
+
 	>>> matrix_mul([], [[1, 2, 3],[4, 5, 6]])
 	Traceback (most recent call last):
     	ValueError: m_a can't be empty
 
+Incompatible matrices dimesions
+===============================
+
 	>>> matrix_mul([[1, 2, 3],[4, 5, 6]], [[]])
 	Traceback (most recent call last):
     	ValueError: shapes (2,3) and (1,0) not aligned: 3 (dim 1) != 1 (dim 0)
+
+	>>> matrix_mul([[1, 2, 5], [3, 4, 7]], [[1, 2], [3, 4]])
+	Traceback (most recent call last):
+	ValueError: shapes (2,3) and (2,2) not aligned: 3 (dim 1) != 2 (dim 0)
+
+Not a number list element
+=========================
 
 	>>> matrix_mul([[1, 2], [3, 'a']], [[1, 2], [3, 4]])
 	Traceback (most recent call last):
@@ -39,6 +58,9 @@ Now use it:
 	Traceback (most recent call last):
     	TypeError: invalid data type for einsum
 
+Not equal size rows argument
+============================
+
 	>>> matrix_mul([[1, 2], [3]], [[1, 2], [3, 4]])
 	Traceback (most recent call last):
     	TypeError: setting an array element with a sequence.
@@ -47,17 +69,22 @@ Now use it:
 	Traceback (most recent call last):
     	TypeError: setting an array element with a sequence.
 
-	>>> matrix_mul([[1, 2, 5], [3, 4, 7]], [[1, 2], [3, 4]])
-	Traceback (most recent call last):
-	ValueError: shapes (2,3) and (2,2) not aligned: 3 (dim 1) != 2 (dim 0)
+Missing one argument
+====================
 
 	>>> matrix_mul([[1, 2, 5], [3, 4, 7]], )
 	Traceback (most recent call last):
 	TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
 
+Missing both arguments
+======================
+
 	>>> matrix_mul()
 	Traceback (most recent call last):
 	TypeError: lazy_matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+
+Not a list of lists argument
+============================
 
 	>>> matrix_mul(["a", [1, 2, 3]], [[1, 2], [3, 4]])
 	Traceback (most recent call last):

@@ -11,8 +11,14 @@ This is an example text file in reStructuredText format.  First import
 
 Now use it:
 
+Regular case
+============
+
 	>>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
 	[[7, 10], [15, 22]]
+
+Not a list argument
+===================
 
 	>>> matrix_mul("a", [[1, 2, 3],[4, 5, 6]])
 	Traceback (most recent call last):
@@ -22,6 +28,9 @@ Now use it:
 	Traceback (most recent call last):
     	TypeError: m_b must be a list
 
+Empty list argument
+===================
+
 	>>> matrix_mul([], [[1, 2, 3],[4, 5, 6]])
 	Traceback (most recent call last):
     	ValueError: m_a can't be empty
@@ -29,6 +38,9 @@ Now use it:
 	>>> matrix_mul([[1, 2, 3],[4, 5, 6]], [])
 	Traceback (most recent call last):
     	ValueError: m_b can't be empty
+
+Not a number list element
+=========================
 
 	>>> matrix_mul([[1, 2], [3, 'a']], [[1, 2], [3, 4]])
 	Traceback (most recent call last):
@@ -38,6 +50,9 @@ Now use it:
 	Traceback (most recent call last):
     	TypeError: m_b should contain only integers or floats
 
+Not equal size rows argument
+============================
+
 	>>> matrix_mul([[1, 2], [3]], [[1, 2], [3, 4]])
 	Traceback (most recent call last):
     	TypeError: each row of m_a must be of the same size
@@ -46,17 +61,29 @@ Now use it:
 	Traceback (most recent call last):
     	TypeError: each row of m_b must be of the same size
 
+Incompatible matrices dimesions
+===============================
+
 	>>> matrix_mul([[1, 2, 5], [3, 4, 7]], [[1, 2], [3, 4]])
 	Traceback (most recent call last):
 	ValueError: m_a and m_b can't be multiplied
+
+Missing one argument
+====================
 
 	>>> matrix_mul([[1, 2, 5], [3, 4, 7]], )
 	Traceback (most recent call last):
 	TypeError: matrix_mul() missing 1 required positional argument: 'm_b'
 
+Missing both arguments
+======================
+
 	>>> matrix_mul()
 	Traceback (most recent call last):
 	TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+
+Not a list of lists argument
+============================
 
 	>>> matrix_mul(["a", [1, 2, 3]], [[1, 2], [3, 4]])
 	Traceback (most recent call last):

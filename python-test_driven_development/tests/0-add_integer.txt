@@ -11,6 +11,9 @@ This is an example text file in reStructuredText format.  First import
 
 Now use it:
 
+Regular case
+============
+
 	>>> add_integer(1, 2)
 	3
 
@@ -23,19 +26,31 @@ Now use it:
 	>>> add_integer(100.3, -2)
 	98
 
+None number argument
+====================
+
 	>>> add_integer(4, "School")
 	Traceback (most recent call last):
     	TypeError: b must be an integer
 
+No argument
+===========
+
 	>>> add_integer(None)
 	Traceback (most recent call last):
     	TypeError: a must be an integer
+
+Can not convert to float
+========================
 
 	>>> add_integer(1.3407807929942597e+154*1.3407807929942597e+154, 2000000000000)
 	89
 
 	>>> add_integer(-1.3407807929942597e+154*1.3407807929942597e+154, -2000000000000)
 	89
+
+Float overflow
+==============
 
 	>>> add_integer(99.3, 3 ** 5000)
 	89
