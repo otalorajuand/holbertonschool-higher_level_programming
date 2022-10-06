@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-import numpy as np
 """This is the "101-lazy_matrix-mul" module.
 The example module supplies one function, lazy_matrix_mul().  For example,
 >>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
 [[7, 10], [15, 22]]
 """
+import numpy as np
 
 
 def lazy_matrix_mul(m_a, m_b):
@@ -21,10 +21,10 @@ def lazy_matrix_mul(m_a, m_b):
     if type(m_b) is not list:
         raise TypeError("Scalar operands are not allowed, use '*' instead")
 
-    if m_a == [] or m_a == [[]]:
+    if m_a == []:
         raise ValueError(r"m_a can't be empty")
 
-    if m_b == [] or m_b == [[]]:
+    if m_b == []:
         raise ValueError(r"m_b can't be empty")
 
     for row in m_a:
