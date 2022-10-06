@@ -50,7 +50,7 @@ def matrix_mul(m_a, m_b):
     res = []
     for i in range(len(m_a)):
         row = []
-        for j in range(len(m_b)):
+        for j in range(len(m_b[0])):
             a = sum([m_a[i][k] * m_b[k][j]
                     for k in range(len(m_a[i]))])
             row.append(a)
