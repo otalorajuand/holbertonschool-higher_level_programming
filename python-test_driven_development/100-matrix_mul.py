@@ -5,6 +5,7 @@ The example module supplies one function, matrix-mul().  For example,
 [[7, 10], [15, 22]]
 """
 
+
 def matrix_mul(m_a, m_b):
     """Multiplies two matrices.
 
@@ -31,7 +32,7 @@ def matrix_mul(m_a, m_b):
         if len(row) != len(m_a[0]):
             raise TypeError('each row of m_a must be of the same size')
         for elem in row:
-             if type(elem) not in [int, float]:
+            if type(elem) not in [int, float]:
                 raise TypeError('m_a should contain only integers or floats')
 
     for row in m_b:
@@ -40,18 +41,18 @@ def matrix_mul(m_a, m_b):
         if len(row) != len(m_b[0]):
             raise TypeError('each row of m_b must be of the same size')
         for elem in row:
-             if type(elem) not in [int, float]:
-                raise TypeError('m_a should contain only integers or floats')
+            if type(elem) not in [int, float]:
+                raise TypeError('m_b should contain only integers or floats')
 
     if len(m_a[0]) != len(m_b):
         raise ValueError(r"m_a and m_b can't be multiplied")
-    
+
     res = []
     for i in range(len(m_a)):
         row = []
         for j in range(len(m_b)):
             a = sum([m_a[i][k] * m_b[k][j]
-                for k in range(len(m_a[i]))])
+                    for k in range(len(m_a[i]))])
             row.append(a)
         res.append(row)
     return (res)
