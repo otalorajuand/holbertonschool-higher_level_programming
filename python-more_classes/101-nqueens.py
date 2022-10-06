@@ -54,3 +54,5 @@ def main():
 
     for elem in NQueens(n):
         print(elem)
+
+main()
