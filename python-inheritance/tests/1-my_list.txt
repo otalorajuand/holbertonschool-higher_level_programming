@@ -29,3 +29,27 @@ Missing argument
 	>>> my_list = MyList()
 	>>> my_list.print_sorted()
 	[]
+
+Checking __str__ method
+=======================
+
+	>>> my_list = MyList()
+	>>> my_list.append(1)
+	>>> my_list.append(4)
+	>>> my_list.append(2)
+	>>> my_list.append(3)
+	>>> my_list.append(5)
+	>>> print(my_list)
+	[1, 4, 2, 3, 5]
+
+List with negative numbers
+==========================
+
+	>>> my_list = MyList()
+	>>> my_list.append(-1)
+	>>> my_list.append(-4)
+	>>> my_list.append(-2)
+	>>> my_list.append(-3)
+	>>> my_list.append(-5)
+	>>> my_list.print_sorted()
+	[-5, -4, -3, -2, -1]

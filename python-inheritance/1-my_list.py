@@ -3,6 +3,7 @@
     this modules contains the class MyList
 """
 
+
 class MyList(list):
     """This class inherits from list"""
 
