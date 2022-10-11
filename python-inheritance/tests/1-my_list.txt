@@ -58,6 +58,6 @@ Returns new list
 ================
 
 	>>> my_list = MyList()
-	>>> type(my_list) == list
+	>>> isinstance(my_list, list)
 	True
 
