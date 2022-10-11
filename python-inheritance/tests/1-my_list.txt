@@ -66,5 +66,5 @@ Class list
 ==========
 
 	>>> my_list = MyList()
-	>>> type(my_list) == list
+	>>> type(my_list) == MyList
 	True
