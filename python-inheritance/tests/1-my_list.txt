@@ -68,3 +68,11 @@ Class list
 	>>> my_list = MyList()
 	>>> type(my_list) == MyList
 	True
+
+Checks if method returns a list
+===============================
+
+	>>> my_list = MyList()
+	>>> my_list.print_sorted()
+	>>> type(my_list) == list
+	True
