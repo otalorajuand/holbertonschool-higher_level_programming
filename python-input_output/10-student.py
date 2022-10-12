@@ -19,7 +19,7 @@ class Student:
     def to_json(self, attrs=None):
         original_attrs = self.__dict__
 
-        if attrs == None:
+        if attrs is None:
             return (original_attrs)
         return ({key: value for key, value in original_attrs.items()
                 if key in attrs})
