@@ -49,3 +49,43 @@ Missing argument
 	Traceback (most recent call last):
     		...
 	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+Checking Area
+============
+
+	>>> bg.area()
+	Traceback (most recent call last):
+		...
+	Exception: area() is not implemented
+
+Incorrect value type
+====================
+
+	>>> bg.integer_validator("age", (4,))
+	Traceback (most recent call last):
+		...
+	TypeError: age must be an integer
+
+
+	>>> bg.integer_validator("age", [3])
+	Traceback (most recent call last):
+		...
+	TypeError: age must be an integer
+
+
+	>>> bg.integer_validator("age", True)
+	Traceback (most recent call last):
+		...
+	TypeError: age must be an integer
+
+
+	>>> bg.integer_validator("age", {3, 4})
+	Traceback (most recent call last):
+		...
+	TypeError: age must be an integer
+
+	>>> bg.integer_validator("age", None)
+	Traceback (most recent call last):
+		...
+	TypeError: age must be an integer
+
