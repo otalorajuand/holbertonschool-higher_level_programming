@@ -16,7 +16,7 @@ class BaseChamp:
         self.current_exp = current_exp
         self.total_exp = total_exp
         self.stats = stats
-        self.stat_points
+        self.stat_points = stat_points
 
     @property
     def name(self):
@@ -43,8 +43,8 @@ class BaseChamp:
             raise TypeError('Race must be a string.')
 
         if value not in ['Human', 'Elf', 'Dwarf', 'Hobbit', 'Orc']:
-            raise ValueError('Race must be one of these: Human, Elf,
-                                Dwarf, Hobbit, Orc')
+            raise ValueError('Race must be one of these: Human, Elf,\
+Dwarf, Hobbit, Orc')
 
         self.__race = value
 
@@ -58,8 +58,8 @@ class BaseChamp:
             raise TypeError('Gender must be a string.')
 
         if value not in ['Male', 'Female', 'Other']:
-            raise ValueError('Race must be one of these: Male,
-                            Female or Other')
+            raise ValueError('Race must be one of these: Male,\
+Female or Other')
 
         self.__gender = value
 
@@ -133,7 +133,7 @@ class BaseChamp:
                 print(f'{key} must have a positive value')
             elif value > 100:
                 value[key] = 100
-               print(f'{key} must be less than 100')
+                print(f'{key} must be less than 100')
         self.__stats = value
  
     @property
@@ -185,7 +185,7 @@ class BaseChamp:
         """Returns the json represention of the champion"""
         return (json.dumps(self))
 
-    @class.method
+    @classmethod
     def load_character(my_str):
         """Returns the python represention of the json string
         Attributes:
@@ -195,13 +195,13 @@ class BaseChamp:
     def increase_stats(self, stat):
 
         if type(stat) is not str:
-            raise TypeError('Select one of the stats Health, Attack, Defense,
-                            Magic, Speed')
+            raise TypeError('Select one of the stats Health, Attack, Defense,\
+Magic, Speed')
 
             self.stats[stat] += self.stat_points
             self.stat_points = 0
 
-                  
+test_champ = BaseChamp("Test", "Orc", "Other", 50, 50, 50, 50, {"Health": 50, "Attack": 50, "Defense": 50, "Magic": 50, "Speed": 50}, 3)              
 
 
 
