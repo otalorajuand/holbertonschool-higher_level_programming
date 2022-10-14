@@ -3,6 +3,7 @@
 This module contains the function append_after()
 """
 
+
 def append_after(filename="", search_string="", new_string=""):
     """This function writes a file with the content of another file, and
     if in any line there is the certain string, a new string will be written
