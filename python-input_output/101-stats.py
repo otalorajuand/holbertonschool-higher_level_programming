@@ -22,7 +22,7 @@ def main():
             
             if striped_line[-2] in dict_lines:
                 dict_lines[striped_line[-2]] += 1
-                acum += int(striped_line[-1])
+            acum += int(striped_line[-1])
 
             if (num_lines % 10 == 0):
                 print(f"File size: {acum}")
