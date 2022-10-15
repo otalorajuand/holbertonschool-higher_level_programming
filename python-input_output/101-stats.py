@@ -31,9 +31,9 @@ def main():
         num_lines += 1
 
     print(f"File size: {acum}")
-        for key in sorted(dict_lines):
-            if dict_lines[key]:
-                print(f"{key}: {dict_lines[key]}")
+    for key in sorted(dict_lines):
+        if dict_lines[key]:
+            print(f"{key}: {dict_lines[key]}")
 
 
 
