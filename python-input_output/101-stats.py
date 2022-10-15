@@ -18,6 +18,9 @@ def main():
     for line in sys.stdin:
 
         striped_line = line.rstrip().split(" ")
+        if len(striped_line) != 9:
+            continue
+
         dict_lines[striped_line[7]] += 1
         acum += int(striped_line[8])
 
