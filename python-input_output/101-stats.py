@@ -18,19 +18,19 @@ def main():
     for line in sys.stdin:
 
         striped_line = line.rstrip().split(" ")
-        if len(striped_line) != 9:
-            continue
+        if len(striped_line) == 9:
+            
+            if striped_line[7] in dict_lines:
+                dict_lines[striped_line[7]] += 1
+            acum += int(striped_line[8])
 
-        dict_lines[striped_line[7]] += 1
-        acum += int(striped_line[8])
+            if (num_lines % 10 == 0):
+                print(f"File size: {acum}")
+                for key in sorted(dict_lines):
+                    if dict_lines[key]:
+                        print(f"{key}: {dict_lines[key]}")
 
-        if (num_lines % 10 == 0):
-            print(f"File size: {acum}")
-            for key in sorted(dict_lines):
-                if dict_lines[key]:
-                    print(f"{key}: {dict_lines[key]}")
-
-        num_lines += 1
+            num_lines += 1
 
     print(f"File size: {acum}")
     for key in sorted(dict_lines):
