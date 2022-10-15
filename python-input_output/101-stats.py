@@ -30,6 +30,12 @@ def main():
         acum += int(striped_line[8])
         num_lines += 1
 
+    print(f"File size: {acum}")
+        for key in sorted(dict_lines):
+            if dict_lines[key]:
+                print(f"{key}: {dict_lines[key]}")
+
+
 
 if __name__ == "__main__":
     main()
