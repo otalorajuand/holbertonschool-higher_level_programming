@@ -18,12 +18,11 @@ def main():
     for line in sys.stdin:
 
         striped_line = line.rstrip().split(" ")
-        if len(striped_line) == 9:
+        if len(striped_line) > 2:
             
-            if striped_line[7] in dict_lines:
-                dict_lines[striped_line[7]] += 1
-            acum += int(striped_line[8])
-            print(acum)
+            if striped_line[-2] in dict_lines:
+                dict_lines[striped_line[-2]] += 1
+                acum += int(striped_line[-1])
 
             if (num_lines % 10 == 0):
                 print(f"File size: {acum}")
