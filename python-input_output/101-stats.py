@@ -18,7 +18,7 @@ def main():
     for line in sys.stdin:
 
         striped_line = line.rstrip().split(" ")
-        if len(striped_line) > 2:           
+        if len(striped_line) > 2:
             if striped_line[-2] in dict_lines:
                 dict_lines[striped_line[-2]] += 1
             acum += int(striped_line[-1])
