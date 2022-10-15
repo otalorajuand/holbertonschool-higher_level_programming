@@ -1,9 +1,15 @@
 #!/usr/bin/python3
+"""
+This module contains the function main()
+"""
 import sys
 import signal
 
 
 def main():
+    """
+    reads stdin line by line and computes metric
+    """
     acum = 0
     num_lines = 0
     dict_lines = {"200": 0, "301": 0, "400": 0, "401": 0, "403": 0,
