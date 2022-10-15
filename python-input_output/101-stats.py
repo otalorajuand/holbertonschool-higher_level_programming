@@ -23,6 +23,7 @@ def main():
             if striped_line[7] in dict_lines:
                 dict_lines[striped_line[7]] += 1
             acum += int(striped_line[8])
+            print(acum)
 
             if (num_lines % 10 == 0):
                 print(f"File size: {acum}")
