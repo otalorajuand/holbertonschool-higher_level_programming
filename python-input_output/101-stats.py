@@ -24,7 +24,7 @@ def main():
         if (num_lines % 10 == 0 and num_lines != 0):
             print(f"File size: {acum}")
             for key in sorted(dict_lines):
-                if dict_lines[key];
+                if dict_lines[key]:
                     print(f"{key}: {dict_lines[key]}")
 
         acum += int(striped_line[8])
