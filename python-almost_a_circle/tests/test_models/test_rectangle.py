@@ -5,7 +5,7 @@ Unittest for class Rectangle
 import unittest
 from models.rectangle import Rectangle
 
-class TestBase(unittest.TestCase):
+class TestRectangle(unittest.TestCase):
     def test_rectangle(self):
 
         r1 = Rectangle(10, 2)
@@ -16,3 +16,18 @@ class TestBase(unittest.TestCase):
 
         r3 = Rectangle(10, 2, 0, 0, 12)
         self.assertAlmostEqual(r3.id, 12)
+
+    def test_rectangle_throws_exception(self):
+        with self.assertRaises(TypeError):
+            Rectangle(10, "2")
+
+        with self.assertRaises(ValueError):
+            r = Rectangle(10, 2)
+            r.width = -10
+
+        with self.assertRaises(TypeError):
+            r = Rectangle(10, 2)
+            r.x = {}
+
+        with self.assertRaises(ValueError):
+            Rectangle(10, 2, 3, -1)
