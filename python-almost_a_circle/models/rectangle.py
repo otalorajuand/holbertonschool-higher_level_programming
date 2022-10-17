@@ -101,8 +101,8 @@ class Rectangle(Base):
         """assigns an argument to each attribute
 
         Attributes:
-            args (list): containts the attributes to be updated in the following
-            order:
+            args (list): containts the attributes to be updated in the
+            following order:
 
             1st argument should be the id attribute
             2nd argument should be the width attribute
@@ -110,8 +110,8 @@ class Rectangle(Base):
             4th argument should be the x attribute
             5th argument should be the y attribute
 
-            kwargs (dict): A dictionary with the name of the attrs as keys and
-            the values to change associated.
+            kwargs (dict): A dictionary with the name of the attrs
+            as keys and the values to change associated.
             """
 
         count = 0
