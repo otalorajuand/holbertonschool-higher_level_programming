@@ -98,6 +98,18 @@ class Rectangle(Base):
                f" - {self.width}/{self.height}"
 
     def update(self, *args):
+        """assigns an argument to each attribute
+
+        Attributes:
+            args: containts the attributes to be updated in the following
+            order:
+
+            1st argument should be the id attribute
+            2nd argument should be the width attribute
+            3rd argument should be the height attribute
+            4th argument should be the x attribute
+            5th argument should be the y attribute
+            """
 
         count = 0
         for arg in args:
