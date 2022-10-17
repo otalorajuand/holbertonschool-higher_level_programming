@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """
-This module includes the class Base which handles 
+This module includes the class Base which handles
 the id for other classes.
 """
 
 
 class Base:
-    """This class handles the instance attribute id for other 
+    """This class handles the instance attribute id for other
     classes to save code
 
     Attributes:
