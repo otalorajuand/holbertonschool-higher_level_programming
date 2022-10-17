@@ -89,3 +89,7 @@ class Rectangle(Base):
         for i in range(self.height):
             result_string += ("#" * self.width) + "\n"
         print(result_string[:-1])
+
+    def __str__(self):
+        """returns the string version of the object"""
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
