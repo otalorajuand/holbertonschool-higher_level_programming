@@ -5,7 +5,6 @@ This module contains the class Rectangle.
 from models.base import Base
 
 
-
 class Rectangle(Base):
     """This class represents a rectangle and inherits from Base.
 
@@ -47,7 +46,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         self.__x = value
- 
+
     @property
     def y(self):
         return self.__y
