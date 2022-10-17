@@ -96,3 +96,19 @@ class Rectangle(Base):
         """returns the string version of the object"""
         return f"[Rectangle] ({self.id}) {self.x}/{self.y}" \
                f" - {self.width}/{self.height}"
+
+    def update(self, *args):
+
+        count = 0
+        for arg in args:
+            if count == 0:
+                self.id = arg
+            elif count == 1:
+                self.width = arg
+            elif count == 2:
+                self.height = arg
+            elif count == 3:
+                self.x = arg
+            elif count == 4:
+                self.y = arg
+            count += 1
