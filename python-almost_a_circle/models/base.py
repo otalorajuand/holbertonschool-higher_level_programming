@@ -21,12 +21,12 @@ class Base:
         if id:
             self.id = id
         else:
-            type(self).__nb_objects += 1
-            self.id = type(self).__nb_objects
+            Base.__nb_objects += 1
+            self.id = Base.__nb_objects
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """eturns the JSON string representation of list_dictionaries"""
+        """Returns the JSON string representation of list_dictionaries"""
         if list_dictionaries is None:
             return "[]"
         return json.dumps(list_dictionaries)
