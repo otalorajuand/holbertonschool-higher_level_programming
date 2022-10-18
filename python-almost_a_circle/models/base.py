@@ -3,6 +3,7 @@
 This module includes the class Base which handles
 the id for other classes.
 """
+import json
 
 
 class Base:
@@ -22,3 +23,9 @@ class Base:
         else:
             type(self).__nb_objects += 1
             self.id = type(self).__nb_objects
+
+    def to_json_string(list_dictionaries):
+        """eturns the JSON string representation of list_dictionaries"""
+        if list_dictionaries is None:
+            return "[]"
+        return json.dumps(list_dictionaries)
