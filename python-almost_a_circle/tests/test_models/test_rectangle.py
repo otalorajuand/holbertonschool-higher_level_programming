@@ -5,6 +5,9 @@ Unittest for class Rectangle
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
+import io
+from contextlib import redirect_stdout
+
 
 class TestRectangle(unittest.TestCase):
 
@@ -34,8 +37,6 @@ class TestRectangle(unittest.TestCase):
 
         r3 = Rectangle(8, 7, 0, 0, 12)
         self.assertAlmostEqual(r3.area(), 56)
-
-
     
     def test_str(self):
 
@@ -44,7 +45,6 @@ class TestRectangle(unittest.TestCase):
 
         r2 = Rectangle(5, 5, 1)
         self.assertAlmostEqual(str(r2), "[Rectangle] (1) 1/0 - 5/5")
-
 
     def test_rectangle_throws_exception(self):
         with self.assertRaises(TypeError):
@@ -84,3 +84,12 @@ class TestRectangle(unittest.TestCase):
 
         with self.assertRaises(ValueError):
             Rectangle(1, 0)
+
+    def test_display(self):
+        r = Rectangle(2, 2)
+        input_string = io.StringIO()
+        res_str = "##\n##\n"
+        with redirect_stdout(input_string):
+            r.display()
+        self.assertEqual(res_str, input_string.getvalue())
+
