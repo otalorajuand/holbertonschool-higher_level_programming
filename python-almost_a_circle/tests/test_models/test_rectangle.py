@@ -14,6 +14,14 @@ class TestRectangle(unittest.TestCase):
     def setUp(self):
         Base._Base__nb_objects = 0
 
+    def test_rectangle(self):
+
+        r1 = Rectangle(1, 2)
+        self.assertEqual(type(r1), Rectangle)
+
+        r2 = Rectangle(1, 2, 3)
+        self.assertEqual(type(r2), Rectangle)
+
     def test_id(self):
 
         r1 = Rectangle(10, 2)
