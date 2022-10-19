@@ -4,6 +4,7 @@ This module includes the class Base which handles
 the id for other classes.
 """
 import json
+import os
 
 
 class Base:
@@ -75,8 +76,9 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """ a list of instances read from a file"""
-        with open(f"{cls.__name__}.json", encoding="utf-8") as f:
-            reading = Base.from_json_string(f.read())
-        if not reading:
+        file_path = f"{cls.__name__}.json"
+        if not os.path.exists(file_path):
             return []
+        with open(file_path, encoding="utf-8") as f:
+            reading = Base.from_json_string(f.read())
         return [cls.create(**elem) for elem in reading]
