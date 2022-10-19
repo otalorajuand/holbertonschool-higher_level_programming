@@ -45,8 +45,7 @@ class Base:
 
         res = []
         if list_objs is not None:
-            for elem in list_objs:
-                res.append(elem.to_dictionary())
+            res = [elem.to_dictionary() for elem in list_objs]
         with open(f"{cls.__name__}.json", mode="w", encoding="utf-8") as f:
             f.write(Base.to_json_string(res))
 
@@ -72,3 +71,10 @@ class Base:
 
         res.update(**dictionary)
         return res
+
+    @classmethod
+    def load_from_file(cls):
+        """ a list of instances read from a file"""
+        with open(f"{cls.__name__}.json", encoding="utf-8") as f:
+            reading = Base.from_json_string(f.read())
+        return [cls.create(**elem) for elem in reading]
