@@ -20,8 +20,11 @@ class TestsSquare(unittest.TestCase):
         s1 = Square(1)
         self.assertEqual(type(s1), Square)
 
-        s2 = Square(1, 2, 3)
+        s2 = Square(1, 2)
         self.assertEqual(type(s2), Square)
+
+        s3 = Square(1, 2, 3)
+        self.assertEqual(type(s3), Square)
 
     def test_id(self):
 
