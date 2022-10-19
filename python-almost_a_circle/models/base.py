@@ -44,7 +44,8 @@ class Base:
             list_objs (list): The list with objects"""
 
         res = []
-        for elem in list_objs:
-            res.append(elem.to_dictionary())
+        if list_objs is not None:
+            for elem in list_objs:
+                res.append(elem.to_dictionary())
         with open(f"{cls.__name__}.json", mode="w", encoding="utf-8") as f:
             f.write(Base.to_json_string(res))
