@@ -13,34 +13,37 @@ class TestRectangle(unittest.TestCase):
 
     def test_id(self):
 
-        r1_id = Rectangle(10, 2)
-        self.assertAlmostEqual(r1_id.id, 1)
+        r1 = Rectangle(10, 2)
+        self.assertEqual(r1.id, 1)
 
-        r2_id = Rectangle(2, 10)
-        self.assertAlmostEqual(r2_id.id, 2)
+        r2 = Rectangle(2, 10)
+        self.assertEqual(r2.id, 2)
 
-        r3_id = Rectangle(10, 2, 0, 0, 12)
-        self.assertAlmostEqual(r3_id.id, 12)
+        r3 = Rectangle(10, 2, 0, 0, 12)
+        self.assertEqual(r3.id, 12)
+
+        r4 = Rectangle(1, 2, 3, 4)
+        self.assertEqual(r4.id, 3)
 
     def test_area(self):
-        r1_area = Rectangle(3, 2)
-        self.assertAlmostEqual(r1_area.area(), 6)
+        r1 = Rectangle(3, 2)
+        self.assertAlmostEqual(r1.area(), 6)
 
-        r2_area = Rectangle(2, 10)
-        self.assertAlmostEqual(r2_area.area(), 20)
+        r2 = Rectangle(2, 10)
+        self.assertAlmostEqual(r2.area(), 20)
 
-        r3_area = Rectangle(8, 7, 0, 0, 12)
-        self.assertAlmostEqual(r3_area.area(), 56)
+        r3 = Rectangle(8, 7, 0, 0, 12)
+        self.assertAlmostEqual(r3.area(), 56)
 
 
     
     def test_str(self):
 
-        r1_str = Rectangle(4, 6, 2, 1, 12)
-        self.assertAlmostEqual(str(r1_str), "[Rectangle] (12) 2/1 - 4/6")
+        r1 = Rectangle(4, 6, 2, 1, 12)
+        self.assertAlmostEqual(str(r1), "[Rectangle] (12) 2/1 - 4/6")
 
-        r2_str = Rectangle(5, 5, 1)
-        self.assertAlmostEqual(str(r2_str), "[Rectangle] (1) 1/0 - 5/5")
+        r2 = Rectangle(5, 5, 1)
+        self.assertAlmostEqual(str(r2), "[Rectangle] (1) 1/0 - 5/5")
 
 
     def test_rectangle_throws_exception(self):
