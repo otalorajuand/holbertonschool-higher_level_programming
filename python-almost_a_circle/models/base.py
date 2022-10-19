@@ -62,8 +62,13 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        from models.rectangle import Rectangle
+        from models.square import Square
 
-        res = cls(1, 1)
+        if cls is Rectangle:
+            res = cls(1, 1)
+        elif cls is Square:
+            res = cls(1)
+
         res.update(**dictionary)
-
         return res
