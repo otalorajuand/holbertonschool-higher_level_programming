@@ -49,3 +49,13 @@ class Base:
                 res.append(elem.to_dictionary())
         with open(f"{cls.__name__}.json", mode="w", encoding="utf-8") as f:
             f.write(Base.to_json_string(res))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """Returns the list of the JSON string representation json_string
+        Attributes:
+        json_string (str): a string representing a list of dictionaries.
+        """
+        if json_string is None:
+            return []
+        return json.loads(json_string)
