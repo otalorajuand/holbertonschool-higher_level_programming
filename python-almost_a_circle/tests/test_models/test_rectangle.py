@@ -7,6 +7,7 @@ from models.base import Base
 from models.rectangle import Rectangle
 import io
 from contextlib import redirect_stdout
+import os
 
 
 class TestRectangle(unittest.TestCase):
@@ -157,3 +158,18 @@ class TestRectangle(unittest.TestCase):
         res_list  = '[{"id": 1, "width": 10, "height": 7, "x": 2, "y": 8},' \
                     ' {"id": 2, "width": 2, "height": 4, "x": 0, "y": 0}]'
         self.assertEqual(reading, res_list) 
+
+    def test_load_from_file(self):
+
+        os.remove('Rectangle.json')
+
+        list_rectangles_output = Rectangle.load_from_file()
+        self.assertEqual(list_rectangles_output, [])
+
+        r1 = Rectangle(2, 4)
+        list_rectangles_input = [r1]
+        Rectangle.save_to_file(list_rectangles_input)
+        list_rectangles_output = Rectangle.load_from_file()
+        res_dict = {'id': 1, 'width': 2, 'height': 4, 'x': 0, 'y': 0}
+        self.assertEqual(list_rectangles_output[0].to_dictionary(), res_dict)
+
