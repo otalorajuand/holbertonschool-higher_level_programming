@@ -77,4 +77,6 @@ class Base:
         """ a list of instances read from a file"""
         with open(f"{cls.__name__}.json", encoding="utf-8") as f:
             reading = Base.from_json_string(f.read())
+        if not reading:
+            return []
         return [cls.create(**elem) for elem in reading]
