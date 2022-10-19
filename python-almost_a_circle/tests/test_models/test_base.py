@@ -4,10 +4,9 @@ Unittest for class Base
 """
 import unittest
 from models.base import Base
-#max_integer = __import__('6-max_integer').max_integer
 
 class TestBase(unittest.TestCase):
-    def test_base(self):
+    def test_id_base(self):
 
         b1 = Base()
         self.assertAlmostEqual(b1.id, 1)
@@ -23,3 +22,7 @@ class TestBase(unittest.TestCase):
 
         b5 = Base()
         self.assertAlmostEqual(b5.id, 4)
+
+
+if __name__ == '__main__':
+    unittest.main()

@@ -3,9 +3,14 @@
 Unittest for class Rectangle
 """
 import unittest
+from models.base import Base
 from models.rectangle import Rectangle
 
 class TestRectangle(unittest.TestCase):
+
+    def setUp(self):
+        Base._Base__nb_objects = 0
+
     def test_id(self):
 
         r1_id = Rectangle(10, 2)
@@ -28,7 +33,7 @@ class TestRectangle(unittest.TestCase):
         self.assertAlmostEqual(r3_area.area(), 56)
 
 
-    """
+    
     def test_str(self):
 
         r1_str = Rectangle(4, 6, 2, 1, 12)
@@ -36,7 +41,6 @@ class TestRectangle(unittest.TestCase):
 
         r2_str = Rectangle(5, 5, 1)
         self.assertAlmostEqual(str(r2_str), "[Rectangle] (1) 1/0 - 5/5")
-    """
 
 
     def test_rectangle_throws_exception(self):
