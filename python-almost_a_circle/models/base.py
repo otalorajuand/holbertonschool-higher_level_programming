@@ -75,10 +75,60 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """ a list of instances read from a file"""
+        """Loads a list of instances read from a file"""
         file_path = f"{cls.__name__}.json"
         if not os.path.exists(file_path):
             return []
         with open(file_path, encoding="utf-8") as f:
             reading = Base.from_json_string(f.read())
         return [cls.create(**elem) for elem in reading]
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """serializes in csv
+
+         Attributes:
+            list_objs (list): The list with objects"""
+        from models.rectangle import Rectangle
+        from models.square import Square
+
+        
+        res = []
+        if list_objs is not None:
+            res = [elem.to_dictionary() for elem in list_objs]
+
+        with open(f"{cls.__name__}.csv", mode="w", encoding="utf-8") as f:
+            for elem in res:
+                if cls is Rectangle:
+                    str_res = f"{elem['id']},{elem['width']},{elem['height']}," \
+                              f"{elem['x']},{elem['y']}\n"
+                if cls is Square:
+                    str_res = f"{elem['id']},{elem['size']},{elem['x']},{elem['y']}\n"
+                f.write(str_res)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """deserializes in CSV"""
+        file_path = f"{cls.__name__}.csv"
+        if not os.path.exists(file_path):
+            return []
+        with open(file_path, encoding="utf-8") as f:
+            reading_list = f.readlines()
+
+        res = []
+        for line in reading_list:
+            line = line.rstrip()
+            line_list = line.split(",")
+
+            if len(line_list) == 5:
+                dict_obj = {"id": int(line_list[0]), "width": int(line_list[1]), 
+                           "height": int(line_list[2]), "x": int(line_list[3]),
+                           "y": int(line_list[4])} 
+            elif len(line_list) == 4:
+                dict_obj = {"id": int(line_list[0]), "width": int(line_list[1]), 
+                           "x": int(line_list[2]), "y": int(line_list[3])} 
+            obj = cls.create(**dict_obj)
+            res.append(obj)
+        return res
+
+
