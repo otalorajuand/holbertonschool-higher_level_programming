@@ -114,6 +114,8 @@ class TestsSquare(unittest.TestCase):
             reading = file.read()
         self.assertEqual(reading, "[]")
 
+        os.remove("Square.json")
+
         s1 = Square(10, 7, 2, 8)
         s2 = Square(2, 4, 3)
         Square.save_to_file([s1, s2])
