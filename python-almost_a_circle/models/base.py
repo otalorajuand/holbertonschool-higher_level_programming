@@ -92,7 +92,6 @@ class Base:
         from models.rectangle import Rectangle
         from models.square import Square
 
-        
         res = []
         if list_objs is not None:
             res = [elem.to_dictionary() for elem in list_objs]
@@ -100,11 +99,12 @@ class Base:
         with open(f"{cls.__name__}.csv", mode="w", encoding="utf-8") as f:
             for elem in res:
                 if cls is Rectangle:
-                    str_res = f"{elem['id']},{elem['width']},{elem['height']}," \
+                    s_res = f"{elem['id']},{elem['width']},{elem['height']}," \
                               f"{elem['x']},{elem['y']}\n"
                 if cls is Square:
-                    str_res = f"{elem['id']},{elem['size']},{elem['x']},{elem['y']}\n"
-                f.write(str_res)
+                    s_res = f"{elem['id']},{elem['size']}," \
+                            f"{elem['x']},{elem['y']}\n"
+                f.write(s_res)
 
     @classmethod
     def load_from_file_csv(cls):
@@ -121,14 +121,16 @@ class Base:
             line_list = line.split(",")
 
             if len(line_list) == 5:
-                dict_obj = {"id": int(line_list[0]), "width": int(line_list[1]), 
-                           "height": int(line_list[2]), "x": int(line_list[3]),
-                           "y": int(line_list[4])} 
+                dict_obj = {"id": int(line_list[0]),
+                            "width": int(line_list[1]),
+                            "height": int(line_list[2]),
+                            "x": int(line_list[3]),
+                            "y": int(line_list[4])}
             elif len(line_list) == 4:
-                dict_obj = {"id": int(line_list[0]), "width": int(line_list[1]), 
-                           "x": int(line_list[2]), "y": int(line_list[3])} 
+                dict_obj = {"id": int(line_list[0]),
+                            "width": int(line_list[1]),
+                            "x": int(line_list[2]),
+                            "y": int(line_list[3])}
             obj = cls.create(**dict_obj)
             res.append(obj)
         return res
-
-
