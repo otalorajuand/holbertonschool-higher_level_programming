@@ -40,6 +40,16 @@ class TestsSquare(unittest.TestCase):
         s4 = Square(1, 2, 4)
         self.assertEqual(s4.id, 3)
 
+    def test_area(self):
+        s1 = Square(3)
+        self.assertEqual(s1.area(), 9)
+
+        s2 = Square(2, 10)
+        self.assertEqual(s2.area(), 4)
+
+        s3 = Square(8, 0, 0, 12)
+        self.assertEqual(s3.area(), 64)
+
     def test_square_throws_exception(self):
         with self.assertRaises(TypeError):
             Square("1")
