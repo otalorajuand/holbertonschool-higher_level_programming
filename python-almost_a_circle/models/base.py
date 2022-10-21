@@ -48,7 +48,7 @@ class Base:
         if list_objs is not None:
             res = [elem.to_dictionary() for elem in list_objs]
         with open(f"{cls.__name__}.json", mode="w", encoding="utf-8") as f:
-            f.write(Base.to_json_string(res))
+            f.write(cls.to_json_string(res))
 
     @staticmethod
     def from_json_string(json_string):
@@ -62,6 +62,13 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        """Creates an object of the class cls based on a dicitonary
+        with attributes
+
+        Attributes:
+            dictionary (dict): The dictionary with the attributes
+            of the new object
+        """
         from models.rectangle import Rectangle
         from models.square import Square
 
@@ -128,7 +135,7 @@ class Base:
                             "y": int(line_list[4])}
             elif len(line_list) == 4:
                 dict_obj = {"id": int(line_list[0]),
-                            "width": int(line_list[1]),
+                            "size": int(line_list[1]),
                             "x": int(line_list[2]),
                             "y": int(line_list[3])}
             obj = cls.create(**dict_obj)

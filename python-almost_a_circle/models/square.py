@@ -44,8 +44,7 @@ class Square(Rectangle):
             as keys and the values to change associated.
             """
 
-        count = 0
-        for arg in args:
+        for count, arg in enumerate(args):
             if count == 0:
                 self.id = arg
             elif count == 1:
@@ -54,7 +53,6 @@ class Square(Rectangle):
                 self.x = arg
             elif count == 3:
                 self.y = arg
-            count += 1
 
         if not args:
             for key, value in kwargs.items():
