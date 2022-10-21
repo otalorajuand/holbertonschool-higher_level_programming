@@ -202,26 +202,5 @@ Magic, Speed')
             self.stat_points = 0
 
 test_champ = BaseChamp("Test", "Orc", "Other", 50, 50, 50, 50, {"Health": 50, "Attack": 50, "Defense": 50, "Magic": 50, "Speed": 50}, 3)              
-
-
-
-
-
-
-
-
-
-
-
-   
-
-
-    
-
-
-            
-
-
-    
-
-
+test_champ.level_up(2)
+print(test_champ.__dict__)
