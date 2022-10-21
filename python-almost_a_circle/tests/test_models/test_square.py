@@ -31,8 +31,8 @@ class TestsSquare(unittest.TestCase):
         s1 = Square(2)
         self.assertEqual(s1.id, 1)
 
-        s2 = Square(1, 2)
-        self.assertEqual(s2.id, 2)
+        s2_2 = Square(1, 3)
+        self.assertEqual(s2_2.id, 2)
 
         s3 = Square(10, 2, 0, 12)
         self.assertEqual(s3.id, 12)
