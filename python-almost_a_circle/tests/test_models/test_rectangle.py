@@ -154,8 +154,6 @@ class TestRectangle(unittest.TestCase):
             reading = file.read()
         self.assertEqual(reading, "[]")
 
-    def test_save_to_file_2(self):
- 
         if os.path.exists("Rectangle.json"):
             os.remove("Rectangle.json")
 
@@ -163,8 +161,11 @@ class TestRectangle(unittest.TestCase):
         r.save_to_file([r])
         with open("Rectangle.json", "r") as file:
             reading = file.read()
-        res_list  = '[{"id": 1, "width": 1, "height": 2, "x": 0, "y": 0}]'
-        self.assertAlmostEqual(len(reading), 52)
+        self.assertTrue('"id": {}'.format(r.id) in reading)
+        self.assertTrue('"width": {}'.format(r.width) in reading)
+        self.assertTrue('"height": {}'.format(r.height) in reading)
+        self.assertTrue('"x": {}'.format(r.x) in reading)
+        self.assertTrue('"y": {}'.format(r.y) in reading)
 
     def test_load_from_file(self):
 
