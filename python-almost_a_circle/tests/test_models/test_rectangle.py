@@ -138,19 +138,26 @@ class TestRectangle(unittest.TestCase):
 
     def test_save_to_file(self):
 
+        if os.path.exists("Rectangle.json"):
+            os.remove("Rectangle.json")
+
         Rectangle.save_to_file(None)
         with open("Rectangle.json", "r") as file:
             reading = file.read()
         self.assertEqual(reading, "[]")
-        os.remove("Rectangle.json")
+
+        if os.path.exists("Rectangle.json"):
+            os.remove("Rectangle.json")
 
         Rectangle.save_to_file([])
         with open("Rectangle.json", "r") as file:
             reading = file.read()
         self.assertEqual(reading, "[]")
-        #os.remove("Rectangle.json")
 
     def test_save_to_file_2(self):
+ 
+        if os.path.exists("Rectangle.json"):
+            os.remove("Rectangle.json")
 
         r = Rectangle(1, 2)
         r.save_to_file([r])
@@ -158,18 +165,6 @@ class TestRectangle(unittest.TestCase):
             reading = file.read()
         res_list  = '[{"id": 1, "width": 1, "height": 2, "x": 0, "y": 0}]'
         self.assertAlmostEqual(len(reading), 52)
-        #os.remove("Rectangle.json")
-
-        """
-        r1 = Rectangle(10, 7, 2, 8)
-        r2 = Rectangle(2, 4)
-        Rectangle.save_to_file([r1, r2])
-        with open("Rectangle.json", "r") as file:
-            reading = file.read()
-        res_list  = '[{"id": 2, "width": 10, "height": 7, "x": 2, "y": 8},' \
-                    ' {"id": 3, "width": 2, "height": 4, "x": 0, "y": 0}]'
-        self.assertEqual(reading, res_list)
-        """
 
     def test_load_from_file(self):
 
