@@ -148,14 +148,14 @@ class TestRectangle(unittest.TestCase):
         with open("Rectangle.json", "r") as file:
             reading = file.read()
         self.assertEqual(reading, "[]")
-        os.remove("Rectangle.json")
+        #os.remove("Rectangle.json")
 
         Rectangle.save_to_file([Rectangle(1, 2)])
         with open("Rectangle.json", "r") as file:
             reading = file.read()
         res_list  = '[{"id": 1, "width": 1, "height": 2, "x": 0, "y": 0}]'
         self.assertEqual(reading, res_list)
-        os.remove("Rectangle.json")
+        #os.remove("Rectangle.json")
 
         r1 = Rectangle(10, 7, 2, 8)
         r2 = Rectangle(2, 4)
