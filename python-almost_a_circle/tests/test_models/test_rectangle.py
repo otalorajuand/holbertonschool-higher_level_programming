@@ -153,7 +153,7 @@ class TestRectangle(unittest.TestCase):
     def test_save_to_file_2(self):
 
         r = Rectangle(1, 2)
-        Rectangle.save_to_file(r)
+        r.save_to_file([r])
         with open("Rectangle.json", "r") as file:
             reading = file.read()
         res_list  = '[{"id": 1, "width": 1, "height": 2, "x": 0, "y": 0}]'
