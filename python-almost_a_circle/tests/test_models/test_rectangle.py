@@ -138,32 +138,36 @@ class TestRectangle(unittest.TestCase):
 
     def test_save_to_file(self):
 
-        if os.path.exists("Rectangle.json"):
+        try:
             os.remove("Rectangle.json")
+        except:
+            pass
 
         Rectangle.save_to_file(None)
         with open("Rectangle.json", "r") as file:
             reading = file.read()
         self.assertEqual(reading, "[]")
-
-        if os.path.exists("Rectangle.json"):
-            os.remove("Rectangle.json")
+        os.remove("Rectangle.json")
 
         Rectangle.save_to_file([])
         with open("Rectangle.json", "r") as file:
             reading = file.read()
             self.assertEqual(reading, "[]")
-
-        if os.path.exists("Rectangle.json"):
-            os.remove("Rectangle.json")
+        os.remove("Rectangle.json")
 
         r = Rectangle(1, 2)
         r.save_to_file([r])
         with open("Rectangle.json", "r") as file:
             reading = file.read()
         self.assertAlmostEqual(len(reading), 52)
+        os.remove("Rectangle.json")
 
     def test_load_from_file(self):
+
+        try:
+            os.remove('Rectangle.json')
+        except:
+            pass
 
         list_rectangles_output = Rectangle.load_from_file()
         self.assertEqual(list_rectangles_output, [])
