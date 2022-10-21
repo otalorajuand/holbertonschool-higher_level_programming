@@ -161,15 +161,9 @@ class TestRectangle(unittest.TestCase):
         r.save_to_file([r])
         with open("Rectangle.json", "r") as file:
             reading = file.read()
-            self.assertTrue('"id": {}'.format(r.id) in reading)
-            self.assertTrue('"width": {}'.format(r.width) in reading)
-            self.assertTrue('"height": {}'.format(r.height) in reading)
-            self.assertTrue('"x": {}'.format(r.x) in reading)
-            self.assertTrue('"y": {}'.format(r.y) in reading)
+        self.assertAlmostEqual(len(reading), 52)
 
     def test_load_from_file(self):
-
-        os.remove('Rectangle.json')
 
         list_rectangles_output = Rectangle.load_from_file()
         self.assertEqual(list_rectangles_output, [])
