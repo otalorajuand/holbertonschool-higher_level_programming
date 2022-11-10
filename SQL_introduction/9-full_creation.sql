@@ -9,5 +9,4 @@ CREATE TABLE IF NOT EXISTS second_table
  (1, 'John', 10),
  (2, 'Alex', 3),
  (3, 'Bob', 14),
- (2, 'George', 8);
- 
+ (4, 'George', 8);
