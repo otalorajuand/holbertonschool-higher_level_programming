@@ -33,6 +33,7 @@ def cities_by_state():
         if i > 0:
             print(', ', end="")
         print(row[1], end="")
+    print()
 
     db.close()
 
