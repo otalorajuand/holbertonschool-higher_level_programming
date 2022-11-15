@@ -12,8 +12,8 @@ def select_states():
        sorted in ascending order by states.id"""
 
     db = MySQLdb.connect(
-        port="localhost",
-        host=3306,
+        host="localhost",
+        port=3306,
         user=argv[1],
         password=argv[2],
         database=argv[3])
