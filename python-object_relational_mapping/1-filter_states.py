@@ -20,7 +20,9 @@ def select_states_with_N():
         database=argv[3])
 
     cur = db.cursor()
-    cur.execute("SELECT id, name FROM states WHERE name LIKE 'N%' ORDER BY states.id ASC")
+    query = "SELECT id, name FROM states WHERE SUBSTRING(name,1) = 'N' \
+             ORDER BY states.id ASC"
+    cur.execute(query)
 
     rows = cur.fetchall()
     for row in rows:
