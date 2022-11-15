@@ -7,9 +7,10 @@ from sys import argv
 
 
 def my_safe_filter_states():
-    """This function connects to the database and displays all 
-    values in the states table of hbtn_0e_0_usa where name matches 
-    the argument. But this time, write one that is safe from MySQL injections!"""
+    """This function connects to the database and displays all
+    values in the states table of hbtn_0e_0_usa where name matches
+    the argument. But this time, write one that is safe from MySQL
+    injections!"""
 
     db = MySQLdb.connect(
         host="localhost",
