@@ -20,8 +20,8 @@ def select_states_with_N():
         database=argv[3])
 
     cur = db.cursor()
-    query = "SELECT id, name FROM states WHERE name LIKE 'N%' \
-             ORDER BY states.id ASC COLLATE latin1_bin"
+    query = "SELECT id, name FROM states WHERE name LIKE BINARY 'N%' \
+             ORDER BY states.id ASC"
     cur.execute(query)
 
     rows = cur.fetchall()
