@@ -25,7 +25,7 @@ def select_states():
     for row in rows:
         print(row)
 
-    db_connection.close()
+    db.close()
 
 if __name__ == "__main__":
     select_states()
