@@ -6,6 +6,7 @@ sorted in ascending order by states.id
 import MySQLdb
 from sys import argv
 
+
 def select_states():
     """This function connects to the database and lists all states
        from the database hbtn_0e_0_usa
@@ -26,6 +27,7 @@ def select_states():
         print(row)
 
     db.close()
+
 
 if __name__ == "__main__":
     select_states()
