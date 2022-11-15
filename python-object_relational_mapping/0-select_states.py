@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 '''
 This module lists all states from the database hbtn_0e_0_usa
+fdsfsfdfdsf
+fsdfsdfsd
 '''
 import MySQLdb
 import sys
@@ -13,3 +15,5 @@ cur.execute("SELECT id, name FROM states")
 rows = cur.fetchall()
 for row in rows:
     print(row)
+
+db_connection.close()
