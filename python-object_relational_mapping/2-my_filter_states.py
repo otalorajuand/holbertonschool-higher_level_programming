@@ -20,9 +20,9 @@ def my_filter_states():
         database=argv[3])
 
     cur = db.cursor()
-    query = "SELECT id, name FROM states WHERE name = %s \
-             ORDER BY states.id ASC"
-    cur.execute(query, [argv[4]])
+    query = "SELECT id, name FROM states WHERE name = '{}' \
+             ORDER BY states.id ASC".format(argv[4])
+    cur.execute(query)
 
     rows = cur.fetchall()
     for row in rows:
