@@ -24,8 +24,11 @@ def model_state_update_id_2():
     conn = engine.connect()
     session = Session(bind=conn)
 
-    obj = session.query.filter_by(id=2).all()
-    obj.name = 'New Mexico'
+    obj = session.query(State).filter(State.id==2).all()
+
+    for elem in obj:
+        elem.name = 'New Mexico'
+
     session.commit()
 
 
