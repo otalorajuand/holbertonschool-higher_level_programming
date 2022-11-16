@@ -29,7 +29,7 @@ def model_state_delete_a():
 
     for elem in obj:
         if 'a' in elem.name:
-            del elem
+            session.delete(elem)
 
     session.commit()
 
