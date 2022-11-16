@@ -25,13 +25,12 @@ def model_state_delete_a():
     conn = engine.connect()
     session = Session(bind=conn)
 
-    obj = session.query(State).all()
+    objs = session.query(State).all()
 
-    for elem in obj:
+    for elem in objs:
         if 'a' in elem.name:
             session.delete(elem)
-
-    session.commit()
+            session.commit()
 
 
 if __name__ == "__main__":
