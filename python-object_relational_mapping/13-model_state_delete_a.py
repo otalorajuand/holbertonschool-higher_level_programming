@@ -28,11 +28,11 @@ def model_state_delete_a():
     objs = session.query(State).all()
 
     for obj in objs:
-      if 'a' in obj.name:
-        session.delete(obj)
-        session.commit()
+        if 'a' in obj.name:
+            session.delete(obj)
 
-
+    session.commit()
+    session.close()
 
 
 if __name__ == "__main__":
