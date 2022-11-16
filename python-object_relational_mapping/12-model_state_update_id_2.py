@@ -24,7 +24,7 @@ def model_state_update_id_2():
     conn = engine.connect()
     session = Session(bind=conn)
 
-    obj = session.query(State).filter(State.id==2).all()
+    obj = session.query(State).filter(State.id == 2).all()
 
     for elem in obj:
         elem.name = 'New Mexico'
