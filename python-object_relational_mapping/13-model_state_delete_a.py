@@ -25,6 +25,7 @@ def model_state_delete_a():
     conn = engine.connect()
     session = Session(bind=conn)
 
+    '''
     objs = session.query(State).order_by('id').all()
 
     for obj in objs:
@@ -33,6 +34,13 @@ def model_state_delete_a():
 
     session.commit()
     session.close()
+    '''
+    instances = session.query(State).order_by(
+        'id').filter(State.name.contains('a'))
+
+    for instance in instances:
+        session.delete(instance)
+    session.commit()
 
 
 if __name__ == "__main__":
