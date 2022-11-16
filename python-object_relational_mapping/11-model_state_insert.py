@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This module contains the function model_state_my_get()
+This module contains the function model_state_insert()
 """
 from model_state import Base, State
 import sys
@@ -8,16 +8,12 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 
-def model_state_my_get():
-    """prints the State object with the name passed
-       as argument from the database hbtn_0e_6_usa"""
+def model_state_insert():
+    """adds the State object “Louisiana” to the database hbtn_0e_6_usa"""
 
     url = 'mysql+mysqldb://{}:{}@localhost/{}'.format(sys.argv[1],
                                                       sys.argv[2],
                                                       sys.argv[3])
-
-    if ';' in argv[4]:
-        return
 
     engine = create_engine(url, pool_pre_ping=True)
     Base.metadata.create_all(engine)
@@ -28,14 +24,11 @@ def model_state_my_get():
     conn = engine.connect()
     session = Session(bind=conn)
 
-    objs = session.query(State).order_by(State.id).all()
-
-    for obj in objs:
-        if sys.argv[4] == obj.name:
-            print(obj.id)
-            return
-    print('Not found')
+    new_state = State(name='Louisiana')
+    session.add(new_state)
+    session.commit()
+    print(new_state.id)
 
 
 if __name__ == "__main__":
-    model_state_my_get()
+    model_state_insert()
