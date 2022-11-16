@@ -4,7 +4,7 @@ This module contains the function model_state_delete_a()
 """
 from model_state import Base, State
 import sys
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, delete
 from sqlalchemy.orm import sessionmaker
 
 
@@ -25,7 +25,14 @@ def model_state_delete_a():
     conn = engine.connect()
     session = Session(bind=conn)
 
-    delete(State).where(State.name.ilike('%a%'))
+    objs = session.query(State).all()
+
+    for obj in objs:
+      if 'a' in obj.name:
+        session.delete(obj)
+        session.commit()
+
+
 
 
 if __name__ == "__main__":
