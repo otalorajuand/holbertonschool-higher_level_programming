@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This module contains the function model_state_update_id_2()
+This module contains the function model_state_delete_a()
 """
 from model_state import Base, State
 import sys
@@ -8,8 +8,9 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 
-def model_state_update_id_2():
-    """changes the name of a State object from the database hbtn_0e_6_usa"""
+def model_state_delete_a():
+    """deletes all State objects with a name containing the
+      letter a from the database hbtn_0e_6_usa"""
 
     url = 'mysql+mysqldb://{}:{}@localhost/{}'.format(sys.argv[1],
                                                       sys.argv[2],
@@ -24,13 +25,14 @@ def model_state_update_id_2():
     conn = engine.connect()
     session = Session(bind=conn)
 
-    obj = session.query(State).filter(State.id == 2).all()
+    obj = session.query(State).all()
 
     for elem in obj:
-        elem.name = 'New Mexico'
+        if 'a' in elem.name:
+            del elem
 
     session.commit()
 
 
 if __name__ == "__main__":
-    model_state_update_id_2()
+    model_state_delete_a()
