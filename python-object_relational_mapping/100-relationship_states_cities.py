@@ -27,10 +27,8 @@ def relationship_states_cities():
     session = Session(bind=conn)
 
     new_state = State(name='California')
-    new_city = City(name="san fransico")
-    new_state.cities = [new_city]
+    new_state.cities = [City(name='San Francisco')]
     session.add_all([new_state])
-    print(new_city)
     session.commit()
 
 
