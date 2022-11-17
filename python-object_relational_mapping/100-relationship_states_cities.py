@@ -1,16 +1,16 @@
 #!/usr/bin/python3
 """
-This module contains the function model_state_delete_a()
+This module contains the function relationship_states_cities()
 """
-from model_state import Base, State
+from relationship_state import Base, State
+from relationship_city import City
 import sys
-from sqlalchemy import create_engine, delete
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 
-def model_state_delete_a():
-    """deletes all State objects with a name containing the
-      letter a from the database hbtn_0e_6_usa"""
+def relationship_states_cities():
+    """adds the State object “Louisiana” to the database hbtn_0e_6_usa"""
 
     url = 'mysql+mysqldb://{}:{}@localhost/{}'.format(sys.argv[1],
                                                       sys.argv[2],
@@ -19,21 +19,18 @@ def model_state_delete_a():
     engine = create_engine(url, pool_pre_ping=True)
     Base.metadata.create_all(engine)
     State.metadata.create_all(engine)
+    City.metadata.create_all(engine)
 
     Session = sessionmaker(bind=engine)
 
     conn = engine.connect()
     session = Session(bind=conn)
 
-    objs = session.query(State).order_by('id').all()
-
-    for obj in objs:
-        if 'a' in obj.name:
-            session.delete(obj)
-
+    new_state = State(name='California')
+    new_state.cities = [City(name='San Francisco')]
+    session.add_all([new_state])
     session.commit()
-    session.close()
 
 
 if __name__ == "__main__":
-    model_state_delete_a()
+    relationship_states_cities()
