@@ -6,4 +6,5 @@ exports.esrever = function (list) {
     list[i] = list[list.length - i - 1];
     list[list.length - i - 1] = aux;
   }
+  return list;
 };
