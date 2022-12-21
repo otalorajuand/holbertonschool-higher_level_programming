@@ -9,7 +9,7 @@ request(process.argv[2], function (error, response, body) {
     content = JSON.parse(body);
   }
 
-  const results = { 1: 0 };
+  const results = {};
   for (let i = 0; i < content.length; i++) {
     if (content[i].completed) {
       if (!(content[i].userId in results)) {
