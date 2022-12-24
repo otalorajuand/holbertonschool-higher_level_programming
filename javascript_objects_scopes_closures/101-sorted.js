@@ -6,6 +6,6 @@ for (const key in dict) {
     if (new_dict[dict[key]]) {
         new_dict[dict[key]] = [];
     } else {
-        new_dict[dict[i]].push(key)
+        new_dict[dict[key]].push(key)
     }
 }
