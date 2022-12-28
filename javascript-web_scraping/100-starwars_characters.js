@@ -9,10 +9,11 @@ request('https://swapi-api.hbtn.io/api/people/', function (error, response, body
     content = JSON.parse(body).results;
   }
 
-  for (const person in content) {
+  for (let i=0; i<content.length; i++) {
+    person = content[i];
     for (const film in person.films) {
       if (film.includes(process.argv[2])) {
-        console.log(person);
+        console.log(person.name);
         break;
       }
     }
