@@ -8,6 +8,8 @@
 
 ## Author
 
+I'm a machine learning engineer and data scientist, interested in machine learning applications with languages like Python and Javascript.
+
 <a href = 'https://www.twitter.com'> <img width = '32px' align= 'center' src="https://raw.githubusercontent.com/rahulbanerjee26/githubAboutMeGenerator/main/icons/twitter.svg"/></a> [Twitter](https://twitter.com/juandotalora)
 
 <a href = 'https://www.linkedin.com'> <img width = '32px' align= 'center' src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg"/></a> [Linkedin](https://www.linkedin.com/in/juan-david-ot%C3%A1lora-carrillo-7a6599172/)
