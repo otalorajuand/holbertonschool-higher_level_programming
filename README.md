@@ -1,5 +1,12 @@
 # holbertonschool-higher_level_programming
 
+![Contributors](https://img.shields.io/github/contributors/otalorajuand/holbertonschool-higher_level_programming?style=plastic)
+![Forks](https://img.shields.io/github/forks/otalorajuand/holbertonschool-higher_level_programming)
+![Stars](https://img.shields.io/github/stars/otalorajuand/holbertonschool-higher_level_programming)
+![Licence](https://img.shields.io/github/otalorajuand/holbertonschool-higher_level_programming)
+![Issues](https://img.shields.io/github/otalorajuand/holbertonschool-higher_level_programming)
+![Languages](https://img.shields.io/github/languages/count/otalorajuand/holbertonschool-higher_level_programming)
+
 > This is a repository of high-level projects, where I explore object-oriented programming
   in Python, databases with MySQL, and frontend with JavaScript. The objective is to learn high-level concepts
   and apply them in practical projects. Also, I made this project to build the project of replicating the Airbnb
