@@ -3,8 +3,6 @@
 ![Contributors](https://img.shields.io/github/contributors/otalorajuand/holbertonschool-higher_level_programming?style=plastic)
 ![Forks](https://img.shields.io/github/forks/otalorajuand/holbertonschool-higher_level_programming)
 ![Stars](https://img.shields.io/github/stars/otalorajuand/holbertonschool-higher_level_programming)
-![Licence](https://img.shields.io/github/otalorajuand/holbertonschool-higher_level_programming)
-![Issues](https://img.shields.io/github/otalorajuand/holbertonschool-higher_level_programming)
 ![Languages](https://img.shields.io/github/languages/count/otalorajuand/holbertonschool-higher_level_programming)
 
 > This is a repository of high-level projects, where I explore object-oriented programming
